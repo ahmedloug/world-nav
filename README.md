@@ -1,4 +1,6 @@
-# world-nav
+# World-nav
+
+This a GIST research-course project in collaboration with Florigen robotics !
 
 Latent world model for predictive collision avoidance on a Unitree Go2 quadruped, trained on simulated construction sites (Isaac Lab) with a frozen V-JEPA 2.1 encoder.
 
