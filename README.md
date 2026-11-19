@@ -16,7 +16,7 @@ Here is an example of the **world model shield** compared with a **naive** contr
 
 Each row shows the chase camera, the Go2 front camera (the model's input) and a top view with the trail and the plan. The header shows the current command, the clearance to the machine, and for the shield the imagined risk and the current danger.
 
-TOP (Baseline) Vs Bottom (WM)
+Top (Baseline) Vs Bottom (WM)
 
 ![World model shield vs naive (seed 90012)](media/demo_seed12_shield_vs_naive.gif)
 
