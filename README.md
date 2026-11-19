@@ -2,7 +2,7 @@
 
 This a GIST research-course project in collaboration with Florigen robotics !
 
-Latent world model for predictive collision avoidance on a Unitree Go2 quadruped, trained on simulated construction sites (Isaac Lab) with a frozen V-JEPA 2.1 encoder.
+We tried a latent world model for predictive collision avoidance on a Unitree Go2 quadruped, trained on simulated construction sites (Isaac Lab) with a frozen V-JEPA 2.1 encoder.
 
 > **Work in progress: results and the closed-loop planner will be added soon.**
 > This repository currently contains the training and offline-evaluation skeleton of the world model. The quantitative results, the closed-loop planner used in the demo below, and the remaining code will be released in the next updates.
