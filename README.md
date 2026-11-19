@@ -39,7 +39,7 @@ Each row shows the chase camera, the Go2 front camera (the model's input) and a 
 
 The notebook runs top to bottom on Colab (A100). Its outputs are cleared for now and will be filled in with the results.
 
-**Data.** The simulated dataset (500 episodes, about 155k samples, plus 4,431 counterfactual branch points × 7 commands × 3 s) comes from project partners and is private, so it is not included.
+**Data.** The simulated dataset (500 episodes, about 155k samples, plus 4,431 counterfactual branch points × 7 commands × 3 s) comes from project partners and is private, so it is not included for now.
 
 ## Acknowledgements
 
