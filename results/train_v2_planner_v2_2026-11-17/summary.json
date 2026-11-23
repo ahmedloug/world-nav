@@ -1,0 +1,68 @@
+{
+ "cvmpc": {
+  "episodes": 20,
+  "success": 6,
+  "machine_collision": 1,
+  "fall": 3,
+  "timeout": 6,
+  "other": 4,
+  "median_time_to_goal_s": 43.35,
+  "median_min_clearance_m": 2.0205,
+  "mean_stops": 2.75
+ },
+ "mppi": {
+  "episodes": 20,
+  "success": 0,
+  "machine_collision": 4,
+  "fall": 4,
+  "timeout": 5,
+  "other": 7,
+  "median_time_to_goal_s": null,
+  "median_min_clearance_m": 1.685,
+  "mean_stops": 0.0
+ },
+ "reactive": {
+  "episodes": 20,
+  "success": 1,
+  "machine_collision": 4,
+  "fall": 2,
+  "timeout": 8,
+  "other": 5,
+  "median_time_to_goal_s": 42.2,
+  "median_min_clearance_m": 1.2715,
+  "mean_stops": 0.95
+ },
+ "reactive_vision": {
+  "episodes": 20,
+  "success": 3,
+  "machine_collision": 2,
+  "fall": 4,
+  "timeout": 6,
+  "other": 5,
+  "median_time_to_goal_s": 49.7,
+  "median_min_clearance_m": 1.2149999999999999,
+  "mean_stops": 3.15
+ },
+ "shield": {
+  "episodes": 20,
+  "success": 8,
+  "machine_collision": 3,
+  "fall": 2,
+  "timeout": 3,
+  "other": 4,
+  "median_time_to_goal_s": 48.45,
+  "median_min_clearance_m": 0.7725,
+  "mean_stops": 1.95
+ },
+ "straight": {
+  "episodes": 20,
+  "success": 2,
+  "machine_collision": 12,
+  "fall": 0,
+  "timeout": 0,
+  "other": 6,
+  "median_time_to_goal_s": 30.35,
+  "median_min_clearance_m": -0.02,
+  "mean_stops": 0.0
+ }
+}

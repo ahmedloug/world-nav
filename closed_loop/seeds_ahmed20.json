@@ -1,0 +1,82 @@
+[
+{
+"seed": 90000,
+"scenario": "excavator_loading"
+},
+{
+"seed": 90001,
+"scenario": "wheel_loader"
+},
+{
+"seed": 90002,
+"scenario": "dozer"
+},
+{
+"seed": 90003,
+"scenario": "haul_road"
+},
+{
+"seed": 90004,
+"scenario": "pit_roller"
+},
+{
+"seed": 90005,
+"scenario": "excavator_loading"
+},
+{
+"seed": 90006,
+"scenario": "wheel_loader"
+},
+{
+"seed": 90007,
+"scenario": "dozer"
+},
+{
+"seed": 90008,
+"scenario": "haul_road"
+},
+{
+"seed": 90009,
+"scenario": "pit_roller"
+},
+{
+"seed": 90010,
+"scenario": "excavator_loading"
+},
+{
+"seed": 90011,
+"scenario": "wheel_loader"
+},
+{
+"seed": 90012,
+"scenario": "dozer"
+},
+{
+"seed": 90013,
+"scenario": "haul_road"
+},
+{
+"seed": 90014,
+"scenario": "pit_roller"
+},
+{
+"seed": 90015,
+"scenario": "excavator_loading"
+},
+{
+"seed": 90016,
+"scenario": "wheel_loader"
+},
+{
+"seed": 90017,
+"scenario": "dozer"
+},
+{
+"seed": 90018,
+"scenario": "haul_road"
+},
+{
+"seed": 90019,
+"scenario": "pit_roller"
+}
+]

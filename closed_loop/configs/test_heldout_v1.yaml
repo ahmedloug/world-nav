@@ -1,0 +1,597 @@
+# Held-out test environment, level 1 (2026-11-05): skies and ground materials never used in collection, denser props
+# (training 8-16), larger excavators (0.75-1.2) and faster operators (0.8-1.2). Evaluation only; not for tuning.
+episode:
+  max_duration_s: 300.0
+  random_duration_s: 60.0
+  bystander_duration_s: 30.0
+  bystander:
+    hit_time_s:
+    - 6.0
+    - 18.0
+    start_clearance_m:
+    - 3.0
+    - 8.0
+    face_noise_rad: 0.8
+  sample_hz: 10
+  spawn_beyond_zone_m:
+  - 1.0
+  - 8.0
+  goal_beyond_zone_m:
+  - 1.0
+  - 8.0
+  goal_angle_offset_deg:
+    expert:
+    - 90.0
+    - 180.0
+    naive:
+    - 140.0
+    - 180.0
+    intruder:
+    - 90.0
+    - 180.0
+  timed_encounter_probability: 0.6
+  random_spawn_radius:
+  - 4.0
+  - 11.0
+controllers:
+  behaviour_probabilities:
+    expert: 0.1
+    naive: 0.2
+    random: 0.25
+    intruder: 0.25
+    bystander: 0.2
+  cruise_speed:
+    expert:
+    - 0.5
+    - 0.9
+    naive:
+    - 0.6
+    - 1.0
+  max_turn_rate: 0.7
+  min_arc_speed: 0.15
+  heading_gain: 1.5
+  waypoint_switch_m: 0.6
+  goal_tolerance_m: 0.6
+  zone_margin_m: 1.5
+  static_margin_m: 0.8
+  prop_margin_m: 0.6
+  naive_avoids_props: false
+  truck_lookahead_s: 6.0
+  evade_speed: 0.7
+  evade_back_speed: -0.25
+  truck_margin_m: 1.5
+  work_area_margin_m: 0.8
+  pit_margin_m: 1.0
+  parked_replan_s: 2.0
+  random_hold_s:
+  - 0.5
+  - 1.0
+  random_weights:
+    forward: 0.2
+    turn_left: 0.13
+    turn_right: 0.13
+    wait: 0.13
+    backward: 0.13
+    strafe_left: 0.07
+    strafe_right: 0.07
+    uniform: 0.14
+  random_speeds:
+    forward:
+    - 0.3
+    - 0.9
+    turn_rate: 0.5
+    turn_forward: 0.3
+    backward: -0.3
+    strafe: 0.25
+    uniform:
+      vx:
+      - -0.3
+      - 0.9
+      vy:
+      - -0.25
+      - 0.25
+      wz:
+      - -0.6
+      - 0.6
+  intruder:
+    cruise_speed:
+    - 0.5
+    - 0.9
+    loiter_s:
+    - 3.0
+    - 10.0
+    inner_margin_m: 1.2
+    reach_margin_m: 0.8
+    arc_extend_rad: 0.3
+    obstacle_margin_m: 0.8
+    pit_edge_probability: 0.35
+    timed_probability: 0.8
+  noise:
+    apply_to:
+    - expert
+    - naive
+    scale:
+    - 0.0
+    - 1.0
+    ou_sigma:
+      vx: 0.15
+      wz: 0.35
+    ou_tau_s: 1.0
+    inject_rate_hz: 0.5
+    inject_hold_s:
+    - 0.5
+    - 1.0
+scenarios:
+  probabilities:
+    excavator_loading: 0.3
+    wheel_loader: 0.175
+    dozer: 0.175
+    haul_road: 0.175
+    pit_roller: 0.175
+  machine_colour_weights:
+    yellow: 0.45
+    orange: 0.25
+    white: 0.12
+    blue: 0.1
+    green: 0.08
+  wheel_loader:
+    scale:
+    - 0.85
+    - 1.15
+    forward_speed:
+    - 1.5
+    - 2.8
+    reverse_speed:
+    - 1.2
+    - 2.2
+    accel: 0.8
+    apex_beyond_m:
+    - 5.0
+    - 8.0
+    min_leg_m: 8.0
+    fill_dwell_s:
+    - 1.5
+    - 3.5
+    dump_dwell_s:
+    - 1.5
+    - 3.0
+    apex_dwell_s:
+    - 0.3
+    - 1.5
+  dozer:
+    scale:
+    - 0.85
+    - 1.15
+    push_speed:
+    - 0.7
+    - 1.4
+    reverse_speed:
+    - 1.4
+    - 2.4
+    accel: 0.5
+    push_length_m:
+    - 10.0
+    - 18.0
+    lanes:
+    - 2
+    - 4
+    lane_spacing_m:
+    - 2.6
+    - 3.4
+    end_dwell_s:
+    - 0.5
+    - 2.0
+    area_distance_m:
+    - 9.0
+    - 16.0
+  haul_road:
+    width_m:
+    - 7.0
+    - 9.0
+    offset_m:
+    - 7.0
+    - 16.0
+    trucks:
+    - 2
+    - 4
+    truck_speed:
+    - 3.0
+    - 7.0
+    truck_accel: 1.0
+    gap_s:
+    - 4.0
+    - 25.0
+    excavator_speed:
+    - 0.5
+    - 1.1
+    excavator_wait_s:
+    - 5.0
+    - 20.0
+    materials:
+    - Base/Natural/Asphalt
+    - vMaterials_2/Ground/Rough_Gravel
+    - vMaterials_2/Ground/Gravel_Track_Ballast
+  pit_roller:
+    pit_length_m:
+    - 4.0
+    - 7.0
+    pit_width_m:
+    - 3.0
+    - 5.0
+    pit_depth_m:
+    - 1.5
+    - 3.0
+    spoil_bearing_rad:
+    - 0.9
+    - 1.2
+    roller_scale:
+    - 0.85
+    - 1.15
+    roller_speed:
+    - 1.0
+    - 2.0
+    roller_accel: 0.4
+    strip_length_m:
+    - 12.0
+    - 20.0
+    passes:
+    - 2
+    - 4
+    pass_shift_m:
+    - 1.6
+    - 2.0
+    strip_beyond_zone_m:
+    - 2.0
+    - 5.0
+    end_dwell_s:
+    - 0.5
+    - 1.5
+sensors:
+  front_camera:
+    mount_link: base
+    position:
+    - 0.32715
+    - -3.0e-05
+    - 0.04297
+    rpy_deg:
+    - 0.0
+    - 0.0
+    - 0.0
+    resolution:
+    - 320
+    - 320
+    hfov_deg: 90.0
+    clipping_range:
+    - 0.05
+    - 100.0
+  depth_camera:
+    enabled: true
+    mount_link: base
+    position:
+    - 0.22
+    - 0.0
+    - 0.115
+    rpy_deg:
+    - 0.0
+    - 15.0
+    - 0.0
+    resolution:
+    - 424
+    - 240
+    hfov_deg: 87.0
+    min_range: 0.2
+    max_range: 10.0
+  lidar:
+    mount_link: base
+    position:
+    - 0.28945
+    - 0.0
+    - -0.046825
+    rpy_deg:
+    - 0.0
+    - 164.91
+    - 0.0
+    vertical_fov_deg:
+    - 0.0
+    - 90.0
+    horizontal_fov_deg:
+    - -180.0
+    - 180.0
+    channels: 18
+    horizontal_res_deg: 3.0
+    max_range: 30.0
+    min_range: 0.05
+scene:
+  layout:
+    base_xy_range: 3.0
+    stockpile_bearing:
+    - -0.4
+    - 0.4
+    stockpile_distance:
+    - 6.5
+    - 8.0
+    stockpile_radius:
+    - 1.8
+    - 2.6
+    stockpile_height:
+    - 1.2
+    - 1.8
+    dump_swing_deg:
+    - 80.0
+    - 115.0
+    truck_park_distance:
+    - 6.5
+    - 7.5
+  excavator:
+    idle_probability: 0.1
+  motion:
+    operator_speed:
+    - 1.1
+    - 1.4
+    joint_vmax:
+      swing: 0.75
+      boom: 0.35
+      arm: 0.5
+      bucket: 0.8
+    joint_amax:
+      swing: 0.5
+      boom: 0.6
+      arm: 0.8
+      bucket: 1.5
+    dig_swing_jitter: 0.12
+    dump_swing_jitter: 0.05
+    pose_jitter:
+      boom: 0.06
+      arm: 0.12
+      bucket: 0.1
+    fill_dwell_s:
+    - 0.3
+    - 1.2
+    dump_dwell_s:
+    - 0.6
+    - 1.5
+    idle_probability: 0.12
+    idle_s:
+    - 2.0
+    - 6.0
+    max_truck_wait_s: 6.0
+    truck_present_at_start_probability: 0.5
+    first_arrival_s:
+    - 0.0
+    - 12.0
+    dumps_per_truck:
+    - 3
+    - 5
+    next_truck_gap_s:
+    - 5.0
+    - 20.0
+    truck_forward_speed:
+    - 2.0
+    - 3.5
+    truck_reverse_speed:
+    - 0.8
+    - 1.3
+    truck_accel: 0.7
+    truck_staging_m:
+    - 10.0
+    - 14.0
+    truck_depart_wait_s:
+    - 1.0
+    - 3.0
+    truck_heading_jitter: 0.1
+  props:
+    enabled: true
+    count:
+    - 14
+    - 24
+    weights:
+      concrete_block: 0.14
+      pallet_pile: 0.12
+      pipe_bundle: 0.1
+      rebar_bundle: 0.08
+      rock_cluster: 0.16
+      cone_cluster: 0.14
+      barricade: 0.08
+      drum_cluster: 0.1
+      crate_stack: 0.08
+    ring_beyond_zone_m:
+    - 1.0
+    - 14.0
+    on_naive_path_fraction: 0.35
+    path_after_machines_probability: 0.5
+    path_offset_m: 1.5
+    clear_of_start_goal_m: 2.5
+    clear_of_truck_m: 1.0
+    clear_of_each_other_m: 1.0
+  ground:
+    materials:
+    - Base/Natural/Sand
+    - Base/Natural/Grass_Cut
+    - Base/Masonry/Concrete_Smooth
+    - Base/Stone/Slate
+    texture_scale:
+    - 0.15
+    - 0.4
+    patches:
+    - 3
+    - 8
+    patch_materials:
+    - Base/Natural/Sand
+    - Base/Masonry/Concrete_Smooth
+    - Base/Natural/Grass_Countryside
+    - Base/Stone/Granite_Dark
+    - Base/Stone/Slate
+    patch_size_m:
+    - 3.0
+    - 14.0
+    patch_area_m: 45.0
+  sky:
+    enabled: true
+    kinds:
+      clear: 0.5
+      low_sun: 0.15
+      cloudy: 0.35
+    clear:
+      Skies/Clear/qwantani_4k.hdr: 1.14
+    low_sun:
+      Skies/Clear/venice_sunset_4k.hdr: 1.57
+    cloudy:
+      Skies/Cloudy/lakeside_4k.hdr: 2.04
+      Skies/Cloudy/sunflowers_4k.hdr: 2.67
+    dome_exposure:
+    - 700.0
+    - 1300.0
+    low_sun_elevation_deg:
+    - 5.0
+    - 15.0
+    low_sun_color_temperature:
+    - 3200.0
+    - 4500.0
+  models:
+    enabled: true
+    excavator: true
+  machine_variation:
+    enabled: true
+    excavator_scale:
+    - 1.0
+    - 1.35
+    truck_length:
+    - 5.5
+    - 8.5
+    truck_width:
+    - 2.3
+    - 2.6
+    truck_height:
+    - 2.4
+    - 3.2
+  lighting:
+    dome_intensity:
+    - 500.0
+    - 1400.0
+    dome_color_temperature:
+    - 4500.0
+    - 7500.0
+    sun_probability: 0.75
+    sun_intensity:
+    - 1000.0
+    - 2500.0
+    sun_elevation_deg:
+    - 20.0
+    - 75.0
+    sun_color_temperature:
+    - 4500.0
+    - 6500.0
+  geometry:
+    undercarriage_size:
+    - 3.6
+    - 2.8
+    - 0.9
+    house_size:
+    - 3.0
+    - 2.5
+    - 1.3
+    house_offset:
+    - -0.4
+    - 0.0
+    - 1.55
+    boom_pivot:
+    - 1.0
+    - 0.0
+    - 1.8
+    boom_length: 4.6
+    boom_section:
+    - 0.55
+    - 0.55
+    arm_length: 2.6
+    arm_section:
+    - 0.4
+    - 0.4
+    bucket_length: 1.1
+    bucket_section:
+    - 1.0
+    - 0.8
+    stockpile_distance: 7.4
+    stockpile_radius: 2.2
+    stockpile_height: 1.5
+    truck_size:
+    - 6.0
+    - 2.5
+    - 2.6
+  truck:
+    park_distance: 7.0
+collection:
+  contact_threshold_n: 20.0
+  stop_after_contact_s: 2.0
+  stop_contact_ratio: 0.5
+  command_rate_limit:
+    lin_accel: 1.0
+    yaw_accel: 2.0
+  idle_keepalive:
+    enabled: true
+    after_s: 2.0
+    yaw_rate: 0.2
+    period_s: 1.0
+  stall_recovery:
+    enabled: true
+    min_command: 0.1
+    after_s: 4.0
+    min_motion_m: 0.15
+    min_yaw_rad: 0.3
+    hold_s: 1.5
+    command:
+    - 0.4
+    - 0.0
+    - 0.0
+  termination:
+    stop_on_machine_contact: true
+    machine_contact_m: 0.3
+    after_contact_s: 3.0
+    no_progress_s: 30.0
+    no_progress_m: 0.5
+  branching:
+    enabled: false
+    start_s: 2.0
+    every_s: 4.0
+    horizon_s: 3.0
+    trigger: near
+    near:
+      min_clear_m: 0.5
+      max_clear_m: 5.0
+      min_gap_s: 2.0
+      prop_min_m: 0.3
+      prop_max_m: 2.5
+      approach_max_m: 8.0
+      approach_rate_mps: 0.5
+    candidates:
+      forward:
+      - 0.7
+      - 0.0
+      - 0.0
+      turn_left:
+      - 0.3
+      - 0.0
+      - 0.5
+      turn_right:
+      - 0.3
+      - 0.0
+      - -0.5
+      wait:
+      - 0.0
+      - 0.0
+      - 0.0
+      backward:
+      - -0.3
+      - 0.0
+      - 0.0
+      strafe_left:
+      - 0.0
+      - 0.25
+      - 0.0
+      strafe_right:
+      - 0.0
+      - -0.25
+      - 0.0
+  policy: null
+storage:
+  rgb_crf: 18
+  save_rgb_depth: true
