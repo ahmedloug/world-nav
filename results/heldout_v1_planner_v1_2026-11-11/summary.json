@@ -1,0 +1,35 @@
+{
+ "ahmed": {
+  "episodes": 20,
+  "success": 3,
+  "machine_collision": 8,
+  "fall": 2,
+  "timeout": 0,
+  "other": 7,
+  "median_time_to_goal_s": 53.6,
+  "median_min_clearance_m": 0.19399999999999998,
+  "mean_stops": 0.15
+ },
+ "reactive": {
+  "episodes": 20,
+  "success": 2,
+  "machine_collision": 2,
+  "fall": 1,
+  "timeout": 8,
+  "other": 7,
+  "median_time_to_goal_s": 53.85,
+  "median_min_clearance_m": 1.4224999999999999,
+  "mean_stops": 0.9
+ },
+ "straight": {
+  "episodes": 20,
+  "success": 4,
+  "machine_collision": 9,
+  "fall": 0,
+  "timeout": 0,
+  "other": 7,
+  "median_time_to_goal_s": 39.8,
+  "median_min_clearance_m": -0.0185,
+  "mean_stops": 0.0
+ }
+}
